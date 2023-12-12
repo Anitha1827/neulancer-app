@@ -128,7 +128,7 @@ const Read = () => {
       <Grid columns={3} divided>
         {comments.map((comment, idx) => (
           <Grid.Column key={idx}>
-            <Card style={{ backgoundColor: "somokiewhite" }}>
+            <Card style={{ backgoundColor: "somokiewhite", height: "100%" }}>
               <Card.Content>
                 <CardHeader>{comment.name}</CardHeader>
                 <CardMeta>
