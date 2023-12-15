@@ -72,7 +72,16 @@ const Read = () => {
           id: `${comments[comments.length - 1].id + 1}`,
         }
       );
-      setComments([...comments, response.data]);
+      setComments([
+        ...comments,
+        {
+          name,
+          email,
+          body,
+          postId,
+          id: `${comments[comments.length - 1].id + 1}`,
+        },
+      ]);
       SetBody("");
     } catch (error) {
       console.error("Error adding comment:", error);
@@ -80,6 +89,7 @@ const Read = () => {
   };
 
   const editComment = async () => {
+    console.log("id", id);
     try {
       let response = await axios.put(
         `https://jsonplaceholder.typicode.com/comments/${id}`,
@@ -90,10 +100,15 @@ const Read = () => {
         }
       );
       console.log("testing response", response);
-      const updatedComments = comments.map((comment) =>
-        comment.id === id ? { ...comment, content: body } : comment
-      );
-      setComments(updatedComments);
+      for (var i = 0; i < comments.length; i++) {
+        comments[i].id === id
+          ? (comments[i] = { id: id, name: name, email: email, body: body })
+          : (comments[i] = comments[i]);
+      }
+      // const updatedComments = comments.map((comment) =>
+      //   comment.id === id ? { ...comment, content: body } : comment
+      // );
+      setComments([...comments]);
     } catch (error) {
       console.error("Error editing comment:", error);
     }
