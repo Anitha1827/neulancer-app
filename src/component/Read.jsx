@@ -175,20 +175,20 @@ const Read = () => {
             <Form>
               <Form.Field>
                 <label>Name</label>
-                <input value={name} onChange={(e) => SetName(e.target.name)} />
+                <input value={name} onChange={(e) => SetName(e.target.value)} />
               </Form.Field>
               <Form.Field>
                 <label>email</label>
                 <input
                   value={email}
-                  onChange={(e) => SetEmail(e.target.email)}
+                  onChange={(e) => SetEmail(e.target.value)}
                 />
               </Form.Field>
               <Form.Field>
                 <label>body</label>
                 <TextArea
                   value={body}
-                  onChange={(e) => SetBody(e.target.body)}
+                  onChange={(e) => SetBody(e.target.value)}
                 />
               </Form.Field>
             </Form>
@@ -219,20 +219,20 @@ const Read = () => {
             <Form>
               <Form.Field>
                 <label>Name</label>
-                <input value={name} onChange={(e) => SetName(e.target.name)} />
+                <input value={name} onChange={(e) => SetName(e.target.value)} />
               </Form.Field>
               <Form.Field>
                 <label>email</label>
                 <input
                   value={email}
-                  onChange={(e) => SetEmail(e.target.email)}
+                  onChange={(e) => SetEmail(e.target.value)}
                 />
               </Form.Field>
               <Form.Field>
                 <label>body</label>
                 <TextArea
                   value={body}
-                  onChange={(e) => SetBody(e.target.body)}
+                  onChange={(e) => SetBody(e.target.value)}
                 />
               </Form.Field>
             </Form>
